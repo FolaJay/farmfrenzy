@@ -11,6 +11,21 @@ const routes = [
     component: Home,
   },
   {
+    path: '/jegede',
+    name: 'Ayodeji',
+    component: () => import('../views/jegede.vue'),
+  },
+  {
+    path: '/sales/view',
+    name: 'view sales',
+    component: () => import('../views/sales/viewSales.vue'),
+  },
+  {
+    path: '/sales/create',
+    name: 'create sales',
+    component: () => import('../views/sales/createSales.vue'),
+  },
+  {
     path: '/about',
     name: 'about',
     // route level code-splitting
