@@ -1,14 +1,13 @@
 <template>
-  <div>
-    <h2>Create Sales</h2>
+  <div class="bg-white w-12/12 p-5">
     <dateDate
-      v-bind:placeholder="'dd/mm/yy'"/>
-    <!-- <inputText
-      v-bind:placeholder="'Stock id'"/> -->
+      v-bind:placeholder="'dd/mm/yy'"
+      v-bind:label="'Date'"/>
     <inputText
       v-bind:placeholder="'Customer name'"
       v-bind:label="'Customer name'"/>
-    <dropdown/>
+    <dropdown
+      v-bind:label="'Country'"/>
     <inputText
       v-bind:label="'Tanks'"/>
     <inputText
@@ -17,8 +16,7 @@
       v-bind:label="'No. of Fish'"/>
     <inputText
       v-bind:label="'Unit Price(#)'"/>
-    <saveButton/>
-    <router-link to="/sales/view">view sales</router-link>
+    <saveButton v-bind:value="'Save'"/>
   </div>
 </template>
 <script>

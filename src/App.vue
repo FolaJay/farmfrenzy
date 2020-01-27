@@ -1,32 +1,21 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <component
+      :is='layout'
+      v-bind:routeName="this.$router.currentRoute.name">
+        <router-view/>
+    </component>
   </div>
 </template>
+<script>
+const defaultLayout = 'default';
 
-<style lang="scss">
-// #app {
-//   font-family: 'Avenir', Helvetica, Arial, sans-serif;
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-//   text-align: center;
-//   color: #2c3e50;
-// }
-
-// #nav {
-//   padding: 30px;
-
-//   a {
-//     font-weight: bold;
-//     color: #2c3e50;
-
-//     &.router-link-exact-active {
-//       color: #42b983;
-//     }
-//   }
-// }
-</style>
+export default {
+  name: 'home',
+  computed: {
+    layout() {
+      return `${this.$route.meta.layout || defaultLayout}-layout`;
+    },
+  },
+};
+</script>
