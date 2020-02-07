@@ -1,22 +1,30 @@
 <template>
   <div class="bg-white w-12/12 p-5">
-    <dateDate
-      v-bind:placeholder="'dd/mm/yy'"
-      v-bind:label="'Date'"/>
-    <inputText
-      v-bind:placeholder="'Customer name'"
-      v-bind:label="'Customer name'"/>
-    <dropdown
-      v-bind:label="'Country'"/>
-    <inputText
-      v-bind:label="'Tanks'"/>
-    <inputText
-      v-bind:label="'Qty(kg)'"/>
-    <inputText
-      v-bind:label="'No. of Fish'"/>
-    <inputText
-      v-bind:label="'Unit Price(#)'"/>
-    <saveButton v-bind:value="'Save'"/>
+    <form @submit.prevent="save" action="">
+      <inputText
+        :placeholder="'Customer name'"
+        :label="'Customer name'"
+        :id="'cn'"
+        v-model="saleData.customerName"/>
+      <dropdown
+        :label="'Fish type'"
+        v-model="saleData.fishType"/>
+      <inputText
+        :label="'Tanks'"
+        v-model="saleData.tank"/>
+      <inputText
+        :label="'Weight (kg)'"
+        v-model="saleData.weight"/>
+      <inputText
+        :label="'Quantity'"
+        v-model="saleData.quantity"/>
+      <inputText
+        :label="'Unit Price (#)'"
+        v-model="saleData.unitPrice"/>
+      <saveButton
+        :value="'Save'"
+        :loading="loading"/>
+    </form>
   </div>
 </template>
 <script>
@@ -28,9 +36,27 @@ import saveButton from '@/components/forms/saveButton.vue';
 export default {
   components: {
     inputText,
-    dateDate,
     dropdown,
     saveButton,
+  },
+  data() {
+    return {
+      loading: false,
+      saleData: {
+        customerName: '',
+        fishType: '',
+        tank: '',
+        weight: '',
+        quantity: '',
+        unitPrice: '',
+      },
+    };
+  },
+  methods: {
+    save() {
+      this.loading = true;
+      console.log(this.saleData);
+    },
   },
 };
 </script>

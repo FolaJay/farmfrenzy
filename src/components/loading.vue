@@ -12,16 +12,16 @@
 }
 .ldio-f26qsrfs4h div {
   position: absolute;
-  width: 62px;
-  height: 62px;
+  width: 40px;
+  height: 40px;
   border: 10px solid #ffffff;
   border-top-color: transparent;
   border-radius: 50%;
 }
 .ldio-f26qsrfs4h div {
   animation: ldio-f26qsrfs4h 1s linear infinite;
-  top: 50px;
-  left: 50px
+  top: 72px;
+  left: 70px;
 }
 .loadingio-spinner-rolling-lw23civ0h4s {
   width: 18px;

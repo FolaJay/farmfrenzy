@@ -1,54 +1,36 @@
 <template>
   <div class='side-bar bg-white h-screen'>
     <div class="flex flex-col flex-no-wrap">
-      <span class="flex lg:hidden justify-end text-3xl">
+      <span class="flex lg:hidden justify-end text-4xl pt-5 pr-4">
         <i class='uil uil-times sideBarTrigger'></i>
       </span>
       <span>
-        <p class="px-5 py-2 lg:py-10 text-3xl font-thin">
+        <p class="flex text-3xl font-thin side-bar-text-logo">
           Farm Frenzy</p>
       </span>
       <ul class="flex flex-col flex-no-wrap vertical-menu">
-        <li><router-link to="/home"><i class='uil uil-analytics'></i>Home</router-link></li>
-        <li>
-          <router-link class="has-submenu"
-            v-bind:class="{ droped: dropDownStatus }"
-            to="/working">
-            <p @click.prevent="toggleDropDown($event)" class="has-icon trigger">
-              <i class='uil uil-store'></i> Sales
-              <i class='uil uil-angle-down'></i></p>
-            <ul class="flex-col flex-no-wrap submenu">
-              <li><router-link to="/sales/view">
-                <i class='uil uil-receipt-alt'></i>View</router-link></li>
-              <li><router-link to="/sales/create">
-                <i class='uil uil-file-landscape-alt'></i>Create</router-link></li>
-            </ul>
-          </router-link>
-        </li>
-        <li>
-          <router-link class="has-submenu"
-            v-bind:class="{ droped: dropDownStatus }"
-            to="/no">
-            <p @click.prevent="toggleDropDown($event)" class="has-icon trigger">
-              <i class='uil uil-store'></i> Purchases
-              <i class='uil uil-angle-down'></i>
-            </p>
-            <ul class="flex flex-col flex-no-wrap submenu">
-              <li><router-link to="/sales/view">
-                <i class='uil uil-receipt-alt'></i>View</router-link></li>
-              <li><router-link to="/sales/create">
-                <i class='uil uil-file-landscape-alt'></i>Create</router-link></li>
-            </ul>
-          </router-link>
-        </li>
-        <li><router-link to="/way"><i class='uil uil-parcel'></i>Master</router-link></li>
-        <li><router-link to="/this"><i class='uil uil-sun'></i>Help</router-link></li>
-        <li><router-link to="/is"><i class='uil uil-cog'></i>Settings</router-link></li>
+        <li><router-link to="/"><i class='uil uil-analytics'></i>Home</router-link></li>
+        <li><router-link to="/sales/view"><i class='uil uil-presentation-line'></i>Sales</router-link></li>
+        <li><router-link to="/puchase/view"><i class='uil uil-parcel'></i>Purchase</router-link></li>
+        <li><router-link to="/this"><i class='uil uil-sun'></i>Master</router-link></li>
+        <li><router-link to="/is"><i class='uil uil-cog'></i>Help</router-link></li>
+        <p class="classic-side-bar-header">others</p>
+        <li><router-link to="/is"><i class='uil uil-comment-heart'></i>Support</router-link></li>
       </ul>
     </div>
   </div>
 </template>
 <style lang="scss" scoped>
+.side-bar-text-logo {
+  padding: 11px 30px;
+}
+.classic-side-bar-header {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #616161;
+  padding: 11px 28px;
+  letter-spacing: 2px;
+}
 .side-bar {
   position: fixed;
   width: 240px;
@@ -69,16 +51,24 @@ ul.vertical-menu {
   li {
     a {
       display: flex;
-      padding: 9px 20px;
-      font-size: 19px;
+      padding: 11px 20px;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      font-size: 15px;
+      i {
+        font-size: 20px;
+      }
     }
     a.router-link-active {
-      color: #0213ff;
+      color: #01960d;
       // background: rgba(2, 19, 255, 0.09);
     }
     a.has-submenu {
       position: relative;
       flex-flow: column nowrap;
+      padding: 11px 0;
       .submenu {
         transition: max-height .2s ease-in;
         max-height: 0px;

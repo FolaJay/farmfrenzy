@@ -4,10 +4,10 @@
     <select class="block appearance-none w-full
       bg-white border border-gray-200 bg-gray-100
       text-gray-700 py-3 px-4 pr-8 rounded
-      leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
-      <option>New Mexico</option>
-      <option>Missouri</option>
-      <option>Texas</option>
+      leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state"
+      :value="value"
+      @input="$emit('input', $event.target.value)">
+      <option value="Cat fish">Cat fish</option>
     </select>
     <div class="pointer-events-none absolute
       inset-y-0 right-0 flex items-center px-2 text-gray-700">
@@ -17,7 +17,7 @@
 </template>
 <script>
 export default {
-  props: ['placeholder', 'label'],
+  props: ['placeholder', 'label', 'value'],
 };
 </script>
 <style lang="scss" scoped>

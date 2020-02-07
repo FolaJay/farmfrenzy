@@ -3,8 +3,8 @@
     <ffHeader/>
     <div class="flex flex-row">
       <sideBar/>
-      <div class="flex flex-col flex-no-wrap p-2 lg:p-5 content-holder
-        ml-3 lg:ml-64 mt-10 w-full lg:w-9/12">
+      <div class="flex flex-col flex-no-wrap p-2 lg:p-5 content-holder m-3
+        lg:ml-3 lg:ml-64 mt-10 w-full lg:w-9/12">
         <p class="font-light py-2 text-4xl">{{routeName}}</p>
         <slot/>
       </div>

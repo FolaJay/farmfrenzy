@@ -12,9 +12,9 @@ const routes = [
     component: Home,
   },
   {
-    path: '/jegede',
-    name: 'Ayodeji',
-    component: () => import('../views/jegede.vue'),
+    path: '/sale/:id',
+    name: ':id',
+    component: () => import('../views/sales/reciept.vue'),
   },
   {
     path: '/sales/view',
