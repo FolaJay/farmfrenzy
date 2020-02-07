@@ -25,6 +25,7 @@
         :value="'Save'"
         :loading="loading"/>
     </form>
+    total: {{ this.saleData.quantity * this.saleData.unitPrice }}
   </div>
 </template>
 <script>
