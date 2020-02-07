@@ -56,7 +56,6 @@ export default {
   methods: {
     save() {
       this.loading = true;
-      console.log(this.saleData);
     },
   },
 };
